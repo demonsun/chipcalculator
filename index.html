@@ -4,23 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <title>计算器小工具</title>
-  
-  <!-- 引入 Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
+  <link rel="preconnect" href="https://lfilmuciwflpqowlpowe.supabase.co" crossorigin>
+  <link rel="dns-prefetch" href="https://lfilmuciwflpqowlpowe.supabase.co">
   <style>
     .pb-safe { padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
-    body { -webkit-tap-highlight-color: transparent; }
+    .pt-safe { padding-top: max(0px, env(safe-area-inset-top)); }
+    body { -webkit-tap-highlight-color: transparent; margin: 0; }
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    #app-loader {
+      position: fixed; inset: 0; z-index: 9999;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    #app-loader .icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 24px rgba(59,130,246,0.3);
+      margin-bottom: 20px; animation: pulse-icon 2s ease-in-out infinite;
+    }
+    #app-loader .icon svg { width: 24px; height: 24px; color: #fff; }
+    #app-loader .text { color: #94a3b8; font-size: 14px; font-weight: 500; }
+    @keyframes pulse-icon { 0%,100% { transform: scale(1); } 50% { transform: scale(1.08); } }
   </style>
-  <script type="module" crossorigin src="/chipcalculator/assets/index-BKSGrAhJ.js"></script>
-  <link rel="modulepreload" crossorigin href="/chipcalculator/assets/lucide-CCy6FvSZ.js">
-  <link rel="modulepreload" crossorigin href="/chipcalculator/assets/firebase-CXMxF4zH.js">
+  <script type="module" crossorigin src="/chipcalculator/assets/index-CjhIVu7L.js"></script>
+  <link rel="modulepreload" crossorigin href="/chipcalculator/assets/vendor-react-DMf9U0-w.js">
+  <link rel="stylesheet" crossorigin href="/chipcalculator/assets/index-yX7PO5TF.css">
 </head>
 <body class="bg-[#F4F5F7] text-slate-800 pb-32 font-sans selection:bg-blue-200">
-  <div id="root"></div>
-
-  <!-- Vite 会自动注入脚本 -->
+  <div id="root">
+    <div id="app-loader">
+      <div class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></svg>
+      </div>
+      <div class="text">加载中…</div>
+    </div>
+  </div>
 </body>
 </html>
