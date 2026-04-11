@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>计算器小工具</title>
+  
+  <!-- 引入 Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    .pb-safe { padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+    body { -webkit-tap-highlight-color: transparent; }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+  </style>
+</head>
+<body class="bg-[#F4F5F7] text-slate-800 pb-32 font-sans selection:bg-blue-200">
+  <div id="root"></div>
+
+  <!-- Vite 会自动注入脚本 -->
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
